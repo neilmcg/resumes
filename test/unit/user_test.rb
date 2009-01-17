@@ -7,6 +7,19 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
+  context "with permissions" do
+    before do
+      @owner = create_user
+      @recruiter = create_user
+    end
+    
+    context "when there is no permission" do
+      test "the recruiter can not view the profile" do
+        assert ! @recruiter.can_view_profile?(@owner)
+      end
+    end
+  end
+  
   context "testing validations" do
     test "should require login" do
       user = new_user(:login => nil)
@@ -32,6 +45,4 @@ class UserTest < ActiveSupport::TestCase
       assert user.errors.on(:email)
     end
   end
-  
-  
 end
