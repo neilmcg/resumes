@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  :has_many :permissions
+  has_many :permissions
   
   include Authentication
   include Authentication::ByPassword
