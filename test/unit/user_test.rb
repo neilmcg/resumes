@@ -18,6 +18,16 @@ class UserTest < ActiveSupport::TestCase
         assert ! @recruiter.can_view_profile?(@owner)
       end
     end
+    
+    context "when there is a permission" do
+      before do
+        create_permission :owner => @owner, :recruiter => @recruiter
+      end
+      
+      test "the recruiter can view the profile" do
+        assert @recruiter.can_view_profile?(@owner)
+      end
+    end
   end
   
   context "testing validations" do
