@@ -9,11 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090116035402) do
+ActiveRecord::Schema.define(:version => 20090117202106) do
 
-  create_table "permissions", :force => true do |t|
-    t.integer  "owner_id"
-    t.integer  "user_id"
+  create_table "invitations", :force => true do |t|
+    t.integer  "inviter_id"
+    t.integer  "invitee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
