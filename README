@@ -1,1 +1,19 @@
 Time to learn this Ruby on Rails thing.
+
+My "Stories"
+
+A user can sign up as a user or a recruiter, marked as a boolean field "recruiter" in user model
+
+A user can create a profile
+A user can upload resumes in PDF form, viewable from their profile
+A user can make their profile and attached resume public or private, although certain fields will always be public (i.e. tags)
+
+Anyone can view public profiles, even if not logged in
+Anyone can view certain public fields of private profiles (i.e. tags)
+
+A user with a private profile can give access to view to any other user, including recruiters
+A user with a private profile can revoke access
+A recruiter can request access to view a certain profile
+
+Notes
+-Should there be a resume model for attachment_fu?
