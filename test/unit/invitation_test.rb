@@ -7,5 +7,10 @@ class InvitationTest < ActiveSupport::TestCase
       new_invitation.save!
     end
   end
+  
+  test "a recruiter can request access to view a private profile" do
+    @invitation = create_invitation
+    assert @invitation.request_access(:invitee_id => 1)
+  end
 
 end

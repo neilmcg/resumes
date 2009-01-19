@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20090117202106) do
   create_table "invitations", :force => true do |t|
     t.integer  "inviter_id"
     t.integer  "invitee_id"
+    t.boolean  "accepted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20090117202106) do
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.boolean  "recruiter"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
